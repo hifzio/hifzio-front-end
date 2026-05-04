@@ -8,13 +8,14 @@ interface ProductCardProps {
   name: string;
   tagline?: string;
   description: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
+  productLogo?: string; // ← SVG/PNG asset path
   features?: string[];
   comingSoon: boolean;
   gradient: string;
   iosLink?: string;
   androidLink?: string;
-  websiteLink?: string; // 👈 NEW
+  websiteLink?: string;
   index?: number;
 }
 
@@ -123,12 +124,13 @@ export const ProductCard = ({
   tagline,
   description,
   icon: Icon,
+  productLogo,
   features,
   comingSoon,
   gradient,
   iosLink,
   androidLink,
-  websiteLink, // 👈 NEW
+  websiteLink,
   index = 0,
 }: ProductCardProps) => {
   const [showQRCodes, setShowQRCodes] = useState(false);
@@ -136,7 +138,7 @@ export const ProductCard = ({
   return (
     <>
       <div
-        className="group relative bg-gradient-card rounded-3xl p-8 shadow-soft hover:shadow-card transition-all duration-500 border border-border/50 hover:border-accent/30 animate-fade-up overflow-hidden"
+        className="group relative rounded-3xl p-8 shadow-soft hover:shadow-card transition-all duration-500 border border-border/50 hover:border-accent/30 animate-fade-up overflow-hidden"
         style={{ animationDelay: `${index * 0.1}s` }}
       >
         {/* Background glow effect */}
@@ -152,21 +154,32 @@ export const ProductCard = ({
         )}
 
         <div className="relative z-10">
-          {/* Header row with icon + QR toggle */}
+          {/* Header row: product logo OR icon */}
           <div className="flex justify-between items-start mb-6">
-            {/* Icon */}
-            <div
-              className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-soft`}
-            >
-              <Icon className="text-accent" size={32} strokeWidth={2} />
-            </div>
+            {productLogo ? (
+              /* Product logo image (SVG with text) */
+              <div className="flex-1 pr-4">
+                <img
+                  src={productLogo}
+                  alt={`${name} logo`}
+                  className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ) : (
+              /* Fallback: Lucide icon in gradient box */
+              <div
+                className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-soft`}
+              >
+                {Icon && <Icon className="text-accent" size={32} strokeWidth={2} />}
+              </div>
+            )}
 
             {/* QR Code Toggle Button */}
             {!comingSoon && (iosLink || androidLink) && (
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-10 px-3 rounded-xl border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 group/qr"
+                className="h-10 px-3 rounded-xl border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 group/qr flex-shrink-0"
                 onClick={() => setShowQRCodes(true)}
               >
                 <QrCode
@@ -180,8 +193,7 @@ export const ProductCard = ({
             )}
           </div>
 
-          {/* Content */}
-          <h3 className="text-3xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+          <h3 className={`text-3xl font-bold text-foreground mb-2 ${!comingSoon ? 'group-hover:text-accent transition-colors duration-300' : ''}`}>
             {name}
           </h3>
 
@@ -211,7 +223,7 @@ export const ProductCard = ({
 
           {/* Actions: website + downloads / notify */}
           <div className="space-y-3">
-            {/* Website button – shown whenever you have a site */}
+            {/* Website button */}
             {websiteLink && (
               <Button
                 variant="outline"
@@ -267,7 +279,7 @@ export const ProductCard = ({
         </div>
       </div>
 
-      {/* QR Modal - Rendered outside the card */}
+      {/* QR Modal */}
       <QRModal
         isOpen={showQRCodes}
         onClose={() => setShowQRCodes(false)}

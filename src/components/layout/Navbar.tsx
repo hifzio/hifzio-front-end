@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "@/components/NavLink";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-import Logo from "@/assets/wequitech_transparant.png"; // adjust path
+import Logo from "@/assets/logo-with-text.svg";
 
 
 export const Navbar = () => {
@@ -14,7 +13,6 @@ export const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/products", label: "Products" },
-    { to: "/team", label: "Team" },
     // { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
   ];
@@ -28,8 +26,8 @@ export const Navbar = () => {
             <span className="flex items-center space-x-2 text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               <img
                 src={Logo}
-                alt="Wequi tech logo"
-                className="h-[110px] w-auto"
+                alt="Hifzio Technologies logo"
+                className="h-[60px] w-auto"
               />
             </span>
           </Link>
@@ -53,6 +51,7 @@ export const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

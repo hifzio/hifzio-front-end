@@ -2,13 +2,20 @@ import { Shield, Globe, Users, Zap, Lock, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ui/product-card";
 
+// Product logo imports
+import guardLogo from "@/assets/hifzio_guard_with_text.svg";
+import browserLogo from "@/assets/hifzio_browser_with_text.svg";
+import kidsLogo from "@/assets/hifzio_kids_with_text.svg";
+import streamLogo from "@/assets/hifzio_stream_with_text.svg";
+
 const products = [
   {
     id: 1,
-    name: "Wequi Guard",
+    name: "Hifzio Guard",
     tagline: "Complete Protection for Your Family",
     description: "Blocks millions of harmful sites including tracking, ads, porn, and harmful ideologies. Enforces Safe-Search and YouTube restrictions to prevent exposure to inappropriate content.",
     icon: Shield,
+    productLogo: guardLogo,
     features: [
       "Block tracking, ads, and harmful content",
       "Parental control system",
@@ -20,14 +27,15 @@ const products = [
     gradient: "from-blue-500/20 to-purple-500/20",
     iosLink: "#",
     androidLink: "#",
-    websiteLink: "https://protect.wequitech.com"
+    websiteLink: "https://guard.hifzio.com"
   },
   {
     id: 2,
-    name: "Wequi Browser",
+    name: "Hifzio Browser",
     tagline: "Browse with Privacy & Safety",
     description: "AI-powered browser that runs on your device, detecting indecent images and blurring them as you browse. Built on Brave and DuckDuckGo for ultimate privacy.",
     icon: Globe,
+    productLogo: browserLogo,
     features: [
       "On-device AI image detection",
       "Automatic content blurring",
@@ -35,75 +43,77 @@ const products = [
       "Complete privacy protection",
       "Zero data collection",
     ],
-    comingSoon: false,
+    comingSoon: true,
     gradient: "from-purple-500/20 to-pink-500/20",
     iosLink: "#",
     androidLink: "#",
   },
   {
     id: 3,
-    name: "Wequi Social",
-    tagline: "Connect in a Safe Community",
-    description: "A moderated community platform where like-minded individuals can connect, share, and grow together in a safe, respectful environment.",
+    name: "Hifzio Kids",
+    tagline: "A Safe Digital World for Children",
+    description: "A curated and moderated digital experience designed specifically for children — age-appropriate content with strong parental controls and activity monitoring.",
     icon: Users,
+    productLogo: kidsLogo,
     features: [
-      "Moderated discussions",
-      "Safe community spaces",
-      "Privacy-focused design",
-      "Interest-based groups",
-      "Event organization",
+      "Age-appropriate content filtering",
+      "Safe browsing environment",
+      "Parental activity dashboard",
+      "Screen time management",
+      "Educational content focus",
     ],
     comingSoon: true,
     gradient: "from-green-500/20 to-blue-500/20",
   },
   {
     id: 4,
-    name: "Smart Shield",
-    tagline: "Next-Gen Security Solution",
-    description: "Advanced AI-powered security system that protects your entire digital ecosystem with real-time threat detection and prevention.",
+    name: "Hifzio Stream",
+    tagline: "Safe & Clean Entertainment",
+    description: "A family-friendly streaming and content platform that curates ethically safe content for all ages — filtered, moderated, and built with families in mind.",
     icon: Zap,
+    productLogo: streamLogo,
     features: [
-      "AI threat detection",
-      "Real-time protection",
-      "Multi-device support",
-      "Automatic updates",
-      "24/7 monitoring",
+      "Family-safe content curation",
+      "Age-restricted categories",
+      "Parental approval system",
+      "Ad-free experience",
+      "Multi-profile support",
     ],
     comingSoon: true,
     gradient: "from-orange-500/20 to-red-500/20",
   },
-  {
-    id: 5,
-    name: "Privacy Vault",
-    tagline: "Secure Your Digital Life",
-    description: "Encrypted storage solution for your sensitive data, passwords, and digital documents with military-grade encryption.",
-    icon: Lock,
-    features: [
-      "End-to-end encryption",
-      "Password manager",
-      "Secure file storage",
-      "Biometric authentication",
-      "Cross-device sync",
-    ],
-    comingSoon: true,
-    gradient: "from-indigo-500/20 to-purple-500/20",
-  },
-  {
-    id: 6,
-    name: "Family Hub",
-    tagline: "Manage Family Digital Wellness",
-    description: "Comprehensive dashboard to monitor and manage your family's digital activities, screen time, and online safety.",
-    icon: Smartphone,
-    features: [
-      "Activity monitoring",
-      "Screen time management",
-      "Location tracking",
-      "App usage insights",
-      "Safety alerts",
-    ],
-    comingSoon: true,
-    gradient: "from-pink-500/20 to-red-500/20",
-  },
+  // {
+  //   id: 5,
+  //   name: "Hifzio Shield",
+  //   tagline: "Next-Gen Security Solution",
+  //   description: "Advanced AI-powered security system that protects your entire digital ecosystem with real-time threat detection and prevention.",
+  //   icon: Lock,
+  //   features: [
+  //     "AI threat detection",
+  //     "Real-time protection",
+  //     "Multi-device support",
+  //     "Automatic updates",
+  //     "24/7 monitoring",
+  //   ],
+  //   comingSoon: true,
+  //   gradient: "from-indigo-500/20 to-purple-500/20",
+  // },
+  // {
+  //   id: 6,
+  //   name: "Hifzio ID",
+  //   tagline: "Manage Your Digital Identity",
+  //   description: "Comprehensive digital identity and family management dashboard to monitor and manage your family's digital activities, accounts, and online safety.",
+  //   icon: Smartphone,
+  //   features: [
+  //     "Digital identity management",
+  //     "Family account dashboard",
+  //     "Activity monitoring",
+  //     "App usage insights",
+  //     "Safety alerts",
+  //   ],
+  //   comingSoon: true,
+  //   gradient: "from-pink-500/20 to-red-500/20",
+  // },
 ];
 
 const Products = () => {
@@ -134,11 +144,13 @@ const Products = () => {
                 tagline={product.tagline}
                 description={product.description}
                 icon={product.icon}
+                productLogo={product.productLogo}
                 features={product.features}
                 comingSoon={product.comingSoon}
                 gradient={product.gradient}
                 iosLink={product.iosLink}
                 androidLink={product.androidLink}
+                websiteLink={product.websiteLink}
                 index={index}
               />
             ))}
@@ -154,7 +166,7 @@ const Products = () => {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Join millions of users who trust Wequi Tech to protect their digital life
+              Join families who trust Hifzio to protect their digital life
             </p>
             <Button variant="hero" size="lg" className="shadow-card hover:shadow-soft hover:scale-105 transition-all duration-300">
               Download Now

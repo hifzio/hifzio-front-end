@@ -1,50 +1,68 @@
-import { Shield, Globe, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ui/product-card";
 import { Link } from "react-router-dom";
+import guardLogo from "@/assets/hifzio_guard.svg";
+import browserLogo from "@/assets/hifzio_browser.svg";
+import kidsLogo from "@/assets/hifzio_kids.svg";
+import streamLogo from "@/assets/hifzio_stream.svg";
 
 const products = [
   {
     id: 1,
-    name: "Wequi Guard",
+    name: "Hifzio Guard",
     description: "Blocks millions of harmful sites including tracking, ads, and inappropriate content. Premium features include parental controls and app usage restrictions.",
-    icon: Shield,
+    productLogo: guardLogo,
     comingSoon: false,
     gradient: "from-blue-500/20 to-purple-500/20",
     iosLink: "#",
     androidLink: "#",
-    websiteLink: "https://protect.wequitech.com"
+    websiteLink: "https://guard.hifzio.com"
   },
   {
     id: 2,
-    name: "Wequi Browser",
+    name: "Hifzio Browser",
     description: "AI-powered browser that detects and blurs indecent images. Built on private and secure foundations for the ideal balance of safety and privacy.",
-    icon: Globe,
-    comingSoon: false,
+    productLogo: browserLogo,
+    comingSoon: true,
     gradient: "from-purple-500/20 to-pink-500/20",
     iosLink: "#",
     androidLink: "#",
-    websiteLink: "https://protect.wequitech.com"
-
+    websiteLink: "https://hifzio.com"
   },
   {
     id: 3,
-    name: "Wequi Social",
-    description: "A community platform connecting like-minded individuals in a safe and moderated environment.",
-    icon: Users,
+    name: "Hifzio Kids",
+    description: "A safe and curated digital experience designed specifically for children — with age-appropriate content and strong parental controls.",
+    productLogo: kidsLogo,
     comingSoon: true,
     gradient: "from-green-500/20 to-blue-500/20",
   },
   {
     id: 4,
-    name: "Smart Shield",
-    description: "Next-generation security solution leveraging AI to protect your entire digital ecosystem.",
-    icon: Zap,
+    name: "Hifzio Stream",
+    description: "A family-friendly streaming and content platform that curates ethically safe content for all ages — filtered, moderated, and built with families in mind.",
+    productLogo: streamLogo,
     comingSoon: true,
-    gradient: "from-orange-500/20 to-red-500/20",
-  },
+  }
+ 
 ];
-
+  // {
+  //   id: 4,
+  //   name: "Hifzio Stream",
+  //   tagline: "Safe & Clean Entertainment",
+  //   description: "A family-friendly streaming and content platform that curates ethically safe content for all ages — filtered, moderated, and built with families in mind.",
+  //   icon: Zap,
+  //   productLogo: streamLogo,
+  //   features: [
+  //     "Family-safe content curation",
+  //     "Age-restricted categories",
+  //     "Parental approval system",
+  //     "Ad-free experience",
+  //     "Multi-profile support",
+  //   ],
+  //   comingSoon: true,
+  //   gradient: "from-orange-500/20 to-red-500/20",
+  // },
 export const ProductShowcase = () => {
   return (
     <section className="py-20 bg-background">
@@ -64,7 +82,7 @@ export const ProductShowcase = () => {
               key={product.id}
               name={product.name}
               description={product.description}
-              icon={product.icon}
+              productLogo={product.productLogo}
               comingSoon={product.comingSoon}
               gradient={product.gradient}
               iosLink={product.iosLink}

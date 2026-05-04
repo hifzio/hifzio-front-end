@@ -33,7 +33,7 @@ export const Hero = () => {
           <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 bg-accent/10 rounded-2xl border border-accent/20 backdrop-blur-sm group hover:bg-accent/15 transition-all duration-300">
             <Sparkles size={16} className="text-accent animate-pulse" />
             <span className="text-accent font-semibold text-sm tracking-wide">
-              Welcome to Wequi Tech
+              Welcome to Hifzio
             </span>
             <div className="flex gap-1">
               <div className="w-1 h-1 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -68,7 +68,7 @@ export const Hero = () => {
 
           {/* Enhanced description */}
           <p className="text-xl md:text-2xl text-foreground/90 mb-12 max-w-3xl mx-auto leading-relaxed font-medium backdrop-blur-sm bg-background/30 rounded-2xl p-6 border border-border/20">
-            A modern tech company with <span className="font-bold text-accent">moral,ethical</span> and safe technology for people. 
+            An ethical technology brand building <span className="font-bold text-accent">family-friendly</span> digital safety products for modern families.
             <span className="block mt-3 text-lg text-foreground/80 font-normal">
               Empowering a safe and ethical digital life.
             </span>

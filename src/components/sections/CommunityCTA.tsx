@@ -11,36 +11,41 @@ export const CommunityCTA = () => {
               Join Our Community
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Stay connected with us and be part of our mission to create a safer digital world
+              Stay connected with us and be part of our mission to create a safer digital world for families
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <a
-                href="https://www.linkedin.com/company/wequi"
+                href="https://www.linkedin.com/company/hifzio"
+                aria-label="Hifzio on LinkedIn"
                 className="w-14 h-14 flex items-center justify-center rounded-full bg-card hover:bg-accent hover:text-white transition-all duration-300 shadow-soft hover:shadow-card hover:scale-110"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/company/wequi"
+                href="https://twitter.com/HifzioHQ"
+                aria-label="Hifzio on Twitter"
                 className="w-14 h-14 flex items-center justify-center rounded-full bg-card hover:bg-accent hover:text-white transition-all duration-300 shadow-soft hover:shadow-card hover:scale-110"
               >
                 <Twitter size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/company/wequi"
+                href="https://www.instagram.com/hifzio"
+                aria-label="Hifzio on Instagram"
                 className="w-14 h-14 flex items-center justify-center rounded-full bg-card hover:bg-accent hover:text-white transition-all duration-300 shadow-soft hover:shadow-card hover:scale-110"
               >
                 <Instagram size={24} />
               </a>
               <a
-                href="https://github.com/Wequi-Technology-Limited"
+                href="https://github.com/hifzio"
+                aria-label="Hifzio on GitHub"
                 className="w-14 h-14 flex items-center justify-center rounded-full bg-card hover:bg-accent hover:text-white transition-all duration-300 shadow-soft hover:shadow-card hover:scale-110"
               >
                 <Github size={24} />
               </a>
               <a
-                href="mailto:info@wequitech.com"
+                href="mailto:hello@hifzio.com"
+                aria-label="Email Hifzio"
                 className="w-14 h-14 flex items-center justify-center rounded-full bg-card hover:bg-accent hover:text-white transition-all duration-300 shadow-soft hover:shadow-card hover:scale-110"
               >
                 <Mail size={24} />

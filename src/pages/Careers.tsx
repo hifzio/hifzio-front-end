@@ -70,7 +70,7 @@ const Careers = () => {
               Join Our Mission
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Help us build a safer digital world for everyone
+              Help us build a safer digital world for every family
             </p>
             <div className="inline-block px-6 py-3 bg-accent/10 rounded-full border border-accent/20">
               <span className="text-accent font-semibold">We're Hiring!</span>
@@ -84,7 +84,7 @@ const Careers = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Why Wequi?
+              Why Hifzio?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Join a team that's passionate about making a real difference
