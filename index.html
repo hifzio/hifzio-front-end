@@ -21,6 +21,20 @@
     <meta name="twitter:description" content="Hifzio Technologies builds ethical and family-friendly digital safety products for modern families." />
 
     <link rel="canonical" href="https://hifzio.com" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("hifzio-theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var shouldUseDark = theme === "dark" || (!theme && prefersDark);
+
+          document.documentElement.classList.toggle("dark", shouldUseDark);
+          document.documentElement.style.colorScheme = shouldUseDark ? "dark" : "light";
+        } catch (_) {
+          document.documentElement.style.colorScheme = "light";
+        }
+      })();
+    </script>
   </head>
 
   <body>
