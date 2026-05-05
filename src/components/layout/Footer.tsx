@@ -17,7 +17,7 @@ export const Footer = () => {
                 <img
                   src={Logo}
                   alt="Hifzio Technologies logo"
-                  className="h-[80px] w-auto rounded-md bg-white shadow-sm"
+                  className="h-[60px] md:h-[80px] w-auto object-contain transition-all duration-300 dark:invert dark:hue-rotate-180"
                 />
               </span>
             </div>

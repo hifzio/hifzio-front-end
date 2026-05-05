@@ -39,6 +39,7 @@ export const CommunityCTA = () => {
               variant="default" 
               size="lg" 
               className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8 py-6 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              onClick={() => window.location.href = "mailto:hello@hifzio.com"}
             >
               Get In Touch
             </Button>

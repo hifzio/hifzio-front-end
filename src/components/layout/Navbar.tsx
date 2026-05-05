@@ -29,7 +29,7 @@ export const Navbar = () => {
               <img
                 src={Logo}
                 alt="Hifzio Technologies logo"
-                className="h-[60px] w-auto rounded-md bg-white shadow-sm"
+                className="h-[50px] md:h-[60px] w-auto object-contain transition-all duration-300 dark:invert dark:hue-rotate-180"
               />
             </span>
           </Link>

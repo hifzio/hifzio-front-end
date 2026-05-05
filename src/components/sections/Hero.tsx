@@ -38,19 +38,18 @@ export const Hero = () => {
 
           {/* Clean, high-contrast CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <Link to="/products">
-              <Button 
-                variant="default" 
-                size="lg" 
-                className="group relative bg-foreground text-background hover:bg-foreground/90 px-8 py-6 rounded-full font-semibold text-base shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  Explore Products
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-            </Link>
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="group relative bg-foreground text-background hover:bg-foreground/90 px-8 py-6 rounded-full font-semibold text-base shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.wequitech.wequi_guard', '_blank')}
+            >
+              <span className="relative z-10 flex items-center">
+                Get Hifzio Guard
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Button>
             
             <Link to="/about">
               <Button 

@@ -1,4 +1,4 @@
-import { Fingerprint, ShieldCheck, Globe, PlaySquare, Baby, Shield, Lock, Cloud, BookOpen } from "lucide-react";
+import { Fingerprint, Shield, Globe, PlaySquare, Baby } from "lucide-react";
 
 export const EcosystemVision = () => {
   return (
@@ -21,109 +21,89 @@ export const EcosystemVision = () => {
           </p>
         </div>
 
-        {/* Ecosystem Visualization – Responsive Orbital View */}
-        <div className="relative flex justify-center items-center min-h-[600px] md:min-h-[800px]">
+        {/* Clear Hierarchy Visualization */}
+        <div className="max-w-6xl mx-auto">
           {/* Central Core: Hifzio ID */}
-          <div className="absolute z-30 flex flex-col items-center group cursor-default">
-            <div className="relative">
-              {/* Pulsing rings around core */}
-              <div className="absolute inset-0 rounded-full bg-primary/30 animate-ping opacity-20" />
-              <div className="absolute -inset-4 rounded-full bg-primary/20 animate-pulse" />
-              <div className="w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-primary/20 via-accent/10 to-background border-2 border-primary/50 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(var(--primary),0.3)] backdrop-blur-sm">
-                <Fingerprint size={48} className="text-primary md:w-12 md:h-12" />
+          <div className="flex justify-center relative z-20">
+            <div className="w-full max-w-md bg-card border border-primary/30 rounded-3xl p-8 text-center shadow-[0_0_50px_rgba(var(--primary),0.1)] relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl" />
+              <div className="relative z-10">
+                <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 ring-4 ring-background shadow-inner">
+                  <Fingerprint size={40} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Hifzio ID</h3>
+                <p className="text-muted-foreground">
+                  The unified, encrypted identity that authenticates your family across all Hifzio products. Set rules once, apply them everywhere.
+                </p>
               </div>
-            </div>
-            <div className="mt-4 px-4 py-1.5 bg-background/80 backdrop-blur-md border border-border/50 rounded-full shadow-lg">
-              <span className="font-bold text-foreground">Hifzio ID</span>
-              <span className="ml-2 text-xs text-muted-foreground uppercase">Core</span>
-            </div>
-            {/* Tooltip on hover */}
-            <div className="absolute top-full mt-2 w-64 p-4 bg-card border border-border/50 rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 backdrop-blur-md">
-              <p className="text-sm text-foreground">The unified, encrypted identity that authenticates your family across all Hifzio products without tracking.</p>
             </div>
           </div>
 
-          {/* Inner orbit (faster, smaller radius) */}
-          <div className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-border/30 rounded-full border-dashed animate-[spin-slow_30s_linear_infinite]" />
-          <div className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] animate-[orbit-reverse_30s_linear_infinite]">
-            {/* Shield (Inner) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-card border border-accent/40 rounded-full flex items-center justify-center shadow-md hover:shadow-accent/20 transition-all duration-300 hover:scale-110 hover:bg-accent/5 cursor-default">
-                <ShieldCheck size={24} className="text-accent" />
-              </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/70 px-2 py-0.5 rounded-md backdrop-blur-sm">Shield</span>
-            </div>
-            {/* Guard (Inner) */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex flex-col items-center group">
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-card border border-primary/40 rounded-full flex items-center justify-center shadow-md hover:shadow-primary/20 transition-all duration-300 hover:scale-110 hover:bg-primary/5 cursor-default">
-                <Shield size={24} className="text-primary" />
-              </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/70 px-2 py-0.5 rounded-md backdrop-blur-sm">Guard</span>
-            </div>
+          {/* Connection Lines - Desktop */}
+          <div className="hidden lg:block relative h-24 -mt-4 z-0">
+            {/* Central vertical line down */}
+            <div className="absolute left-1/2 top-4 bottom-1/2 w-px bg-border -translate-x-1/2" />
+            {/* Horizontal distribution line */}
+            <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-border" />
+            {/* Vertical lines to products */}
+            <div className="absolute top-1/2 left-[12.5%] w-px h-1/2 bg-border" />
+            <div className="absolute top-1/2 left-[37.5%] w-px h-1/2 bg-border" />
+            <div className="absolute top-1/2 left-[62.5%] w-px h-1/2 bg-border" />
+            <div className="absolute top-1/2 left-[87.5%] w-px h-1/2 bg-border" />
           </div>
 
-          {/* Outer orbit (slower, larger radius) */}
-          <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] border border-border/20 rounded-full border-dashed animate-[orbit-slow_60s_linear_infinite_reverse]" />
-          <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] animate-[orbit-slow-reverse_60s_linear_infinite]">
+          {/* Connection Lines - Mobile/Tablet */}
+          <div className="lg:hidden flex justify-center h-12 -mt-2 relative z-0">
+            <div className="w-px h-full bg-border" />
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {/* Guard */}
+            <div className="bg-card border border-border/50 rounded-3xl p-6 text-center hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+              <div className="mx-auto w-16 h-16 bg-card border border-border/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                <Shield size={28} className="text-accent" />
+              </div>
+              <h4 className="text-lg font-bold text-foreground mb-2">Hifzio Guard</h4>
+              <p className="text-sm text-muted-foreground">System-wide protection and robust parental controls.</p>
+            </div>
+            
             {/* Browser */}
-            <div className="absolute top-[10%] left-[10%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-card border border-border/50 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg hover:border-accent/30 transition-all duration-300 hover:scale-110 cursor-default">
-                <Globe size={28} className="text-foreground/80 group-hover:text-foreground" />
+            <div className="bg-card border border-border/50 rounded-3xl p-6 text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+              <div className="mx-auto w-16 h-16 bg-card border border-border/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                <Globe size={28} className="text-primary" />
               </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/80 px-3 py-1 rounded-full border border-border/30 backdrop-blur-sm">Browser</span>
+              <h4 className="text-lg font-bold text-foreground mb-2">Hifzio Browser</h4>
+              <p className="text-sm text-muted-foreground">Safe browsing with real-time on-device AI filtering.</p>
             </div>
+
             {/* Kids */}
-            <div className="absolute top-[10%] right-[10%] translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-card border border-border/50 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg hover:border-accent/30 transition-all duration-300 hover:scale-110 hover:bg-accent/5 cursor-default">
+            <div className="bg-card border border-border/50 rounded-3xl p-6 text-center hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+              <div className="mx-auto w-16 h-16 bg-card border border-border/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <Baby size={28} className="text-accent" />
               </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/80 px-3 py-1 rounded-full border border-border/30 backdrop-blur-sm">Kids</span>
+              <h4 className="text-lg font-bold text-foreground mb-2">Hifzio Kids</h4>
+              <p className="text-sm text-muted-foreground">A curated, engaging, and highly safe environment for children.</p>
             </div>
+
             {/* Stream */}
-            <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 translate-y-1/2 flex flex-col items-center group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-card border border-border/50 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:scale-110 hover:bg-primary/5 cursor-default">
+            <div className="bg-card border border-border/50 rounded-3xl p-6 text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+              <div className="mx-auto w-16 h-16 bg-card border border-border/50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <PlaySquare size={28} className="text-primary" />
               </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/80 px-3 py-1 rounded-full border border-border/30 backdrop-blur-sm">Stream</span>
+              <h4 className="text-lg font-bold text-foreground mb-2">Hifzio Stream</h4>
+              <p className="text-sm text-muted-foreground">Family-friendly streaming content moderated for safety.</p>
             </div>
-            {/* Cloud (extra product for fullness) */}
-            <div className="absolute bottom-[10%] right-[10%] translate-x-1/2 translate-y-1/2 flex flex-col items-center group opacity-70 hover:opacity-100 transition-all">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-card border border-border/50 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg hover:border-muted-foreground/30 transition-all duration-300 hover:scale-110 cursor-default">
-                <Cloud size={28} className="text-muted-foreground" />
-              </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/80 px-3 py-1 rounded-full border border-border/30 backdrop-blur-sm">Cloud</span>
-            </div>
-            {/* Learn */}
-            <div className="absolute top-[10%] left-[85%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-card border border-border/50 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg hover:border-accent/30 transition-all duration-300 hover:scale-110 hover:bg-accent/5 cursor-default">
-                <BookOpen size={28} className="text-accent" />
-              </div>
-              <span className="mt-2 text-xs md:text-sm font-medium text-foreground bg-background/80 px-3 py-1 rounded-full border border-border/30 backdrop-blur-sm">Learn</span>
-            </div>
-          </div>
-
-          {/* Decorative connecting lines (optional) */}
-          <div className="absolute inset-0 pointer-events-none">
-            <svg className="w-full h-full opacity-20">
-              <defs>
-                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="transparent" />
-                </radialGradient>
-              </defs>
-              <circle cx="50%" cy="50%" r="30%" fill="url(#glow)" />
-            </svg>
           </div>
         </div>
 
-        {/* Bottom description – reinforces value */}
-        <div className="text-center mt-16 max-w-2xl mx-auto">
-          <p className="text-sm md:text-base text-muted-foreground">
-            One ID, one safety policy, <span className="text-accent font-medium">seamless protection</span> across every touchpoint. From browsing to streaming to learning, Hifzio keeps your family safe.
+        {/* Bottom description */}
+        <div className="text-center mt-16 md:mt-24 max-w-2xl mx-auto bg-card/50 border border-border/50 rounded-2xl p-6 backdrop-blur-sm">
+          <p className="text-base text-foreground">
+            <span className="font-semibold text-accent">One ID, one safety policy.</span> Set your family's rules once in Hifzio ID, and they instantly apply across every product in the ecosystem.
           </p>
         </div>
       </div>
-
     </section>
   );
 };

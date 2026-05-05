@@ -2,13 +2,13 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Mail, 
-  MapPin, 
-  Clock, 
-  MessageCircle, 
-  Twitter, 
-  Linkedin, 
+import {
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+  Twitter,
+  Linkedin,
   Instagram,
   LoaderCircle,
   Send
@@ -31,7 +31,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
@@ -88,7 +88,7 @@ const Contact = () => {
               Get In Touch
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have questions about Hifzio, need support, or want to collaborate? 
+              Have questions about Hifzio, need support, or want to collaborate?
               We'd love to hear from you.
             </p>
           </div>
@@ -99,7 +99,7 @@ const Contact = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-            
+
             {/* Left Column - Contact Info */}
             <div className="space-y-8 animate-fade-up">
               <div>
@@ -118,39 +118,10 @@ const Contact = () => {
                     <Mail className="text-accent w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">General Enquiries</h3>
+                    <h3 className="font-semibold text-foreground text-lg mb-1">Email Us</h3>
                     <a href="mailto:hello@hifzio.com" className="text-muted-foreground hover:text-accent transition-colors">
                       hello@hifzio.com
                     </a>
-                  </div>
-                </div>
-
-                <div className="group flex items-start gap-5 p-5 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-card transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <Mail className="text-accent w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">Technical Support</h3>
-                    <a href="mailto:support@hifzio.com" className="text-muted-foreground hover:text-accent transition-colors">
-                      support@hifzio.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="group flex items-start gap-5 p-5 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-card transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <Mail className="text-accent w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground text-lg mb-1">Privacy & Security</h3>
-                    <div className="space-y-1">
-                      <a href="mailto:privacy@hifzio.com" className="text-muted-foreground hover:text-accent transition-colors block">
-                        privacy@hifzio.com
-                      </a>
-                      <a href="mailto:security@hifzio.com" className="text-muted-foreground hover:text-accent transition-colors block">
-                        security@hifzio.com
-                      </a>
-                    </div>
                   </div>
                 </div>
 
@@ -183,7 +154,6 @@ const Contact = () => {
                   <MapPin className="text-accent w-8 h-8 mb-3 animate-pulse" />
                   <p className="text-muted-foreground font-medium">Hifzio Global HQ</p>
                   <p className="text-sm text-muted-foreground/70">Dhaka, Bangladesh</p>
-                  <p className="text-xs text-muted-foreground/50 mt-4">Interactive map coming soon</p>
                 </div>
               </div>
 
@@ -275,10 +245,10 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  className="w-full group" 
+                <Button
+                  type="submit"
+                  variant="hero"
+                  className="w-full group"
                   disabled={isSubmitting}
                   aria-busy={isSubmitting}
                 >

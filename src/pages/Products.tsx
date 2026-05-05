@@ -26,7 +26,7 @@ const products = [
     comingSoon: false,
     gradient: "from-blue-500/20 to-purple-500/20",
     iosLink: "#",
-    androidLink: "#",
+    androidLink: "https://play.google.com/store/apps/details?id=com.wequitech.wequi_guard&pcampaignid=web_share",
     websiteLink: "https://guard.hifzio.com"
   },
   {
@@ -168,7 +168,12 @@ const Products = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Join families who trust Hifzio to protect their digital life
             </p>
-            <Button variant="hero" size="lg" className="shadow-card hover:shadow-soft hover:scale-105 transition-all duration-300">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="shadow-card hover:shadow-soft hover:scale-105 transition-all duration-300"
+              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.wequitech.wequi_guard', '_blank')}
+            >
               Download Now
             </Button>
           </div>

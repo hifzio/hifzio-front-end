@@ -20,7 +20,7 @@ interface ProductCardProps {
 }
 
 // QR Modal Component
-const QRModal = ({
+export const QRModal = ({
   isOpen,
   onClose,
   iosLink,
